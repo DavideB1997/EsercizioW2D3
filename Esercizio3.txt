@@ -1,0 +1,61 @@
+1 SELECT COUNT(*) as numero
+  FROM [master].[dbo].[Orders]
+
+2 SELECT COUNT(*) as totaleClienti
+  FROM [master].[dbo].[Customers]
+
+3 SELECT TOP (1000) [CustomerID]
+      ,[CompanyName]
+      ,[ContactName]
+      ,[ContactTitle]
+      ,[Address]
+      ,[City]
+      ,[Region]
+      ,[PostalCode]
+      ,[Country]
+      ,[Phone]
+      ,[Fax]
+  FROM [master].[dbo].[Customers]
+  where City= 'London'
+
+4 SELECT AVG(Freight) 
+  FROM [master].[dbo].[Orders]
+
+5 SELECT AVG(Freight) 
+  FROM [master].[dbo].[Orders]
+  where CustomerID = 'BOTTM'
+
+6 SELECT [CustomerID] , SUM(Freight)
+	
+  FROM [master].[dbo].[Orders]
+  GROUP BY CustomerID
+
+7  SELECT City, COUNT(*)
+  FROM [master].[dbo].[Customers]
+  GROUP BY City
+
+8 SELECT SUM(UnitPrice * Quantity)
+  FROM [master].[dbo].[Order Details]
+
+9 SELECT SUM(UnitPrice * Quantity)
+  FROM [master].[dbo].[Order Details]
+  where OrderID= 10248
+
+10 SELECT COUNT(*)
+  FROM [master].[dbo].[Products]
+  GROUP BY CategoryID
+
+11 SELECT [ShipCountry],
+COUNT(*)
+  FROM [master].[dbo].[Orders]
+  GROUP BY ShipCountry
+
+12 SELECT 
+[ShipCountry],
+AVG(Freight)
+  FROM [master].[dbo].[Orders]
+  GROUP BY ShipCountry
+
+
+
+
